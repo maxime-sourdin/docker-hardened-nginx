@@ -1,4 +1,4 @@
-FROM proxy-docker.sourdin.ovh/nginx:stable-alpine
+FROM proxy-docker.sourdin.ovh/nginx:1.22.0-alpine
 RUN apk update --no-cache && \
     apk upgrade --no-cache && \
     apk add --no-cache openssl
