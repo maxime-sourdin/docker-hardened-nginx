@@ -59,7 +59,7 @@ jobs:
             --cache-from type=local,src=/tmp/buildx-cache \
             --cache-to type=local,dest=/tmp/buildx-cache \
             --label org.opencontainers.image.revision="${{github.sha}}" \
-            --platform "linux/amd64" \
+            --platform "linux/arm/v7,linux/arm64,linux/amd64" \
             --pull \
             --tag "${{secrets.REGISTRY_NAME}}/web/hardened-nginx:${GITHUB_REF#refs/tags/}" \
             --output "type=image,push=true" \
@@ -70,7 +70,7 @@ jobs:
             --cache-from type=local,src=/tmp/buildx-cache \
             --cache-to type=local,dest=/tmp/buildx-cache \
             --label org.opencontainers.image.revision="${{github.sha}}" \
-            --platform "linux/amd64" \
+            --platform "linux/arm/v7,linux/arm64,linux/amd64" \
             --tag "${{secrets.REGISTRY_NAME}}/web/hardened-nginx:latest" \
             --output "type=image,push=true" \
             --file ./Dockerfile .
